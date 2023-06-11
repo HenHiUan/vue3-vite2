@@ -18,7 +18,7 @@
   //getters
   // console.log(store.getaaa)
 
-  console.log(aaa)
+  // console.log(aaa)
   import starrySky from '../HIns/aboutCss/starrySky.vue'
 </script>
 

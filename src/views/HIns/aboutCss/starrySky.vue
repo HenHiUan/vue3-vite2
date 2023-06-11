@@ -5,19 +5,19 @@
     <div class="layer1"></div>
     <div class="layer2"></div>
     <div class="layer3"></div>
-    <div class="layer4"></div>
-    <div class="layer5"></div>
     <!-- <div class="title">广告位招租</div> -->
   </div>
 </template>
 <style lang="scss" scoped>
-  @function getShadows($n) {
-    $shadows:'#{random(100)}vw #{random(100)}vh #fff';
-    @for $i from 2 through $n {
-      $shadows:'#{$shadows},#{random(100)}vw #{random(100)}vh #fff';
-    }
-    @return unquote($shadows)
-  };
+    $duration: 180s;
+    $count: 180;
+    @function getShadows($n) {
+      $shadows:'#{random(100)}vw #{random(100)}vh #fff';
+      @for $i from 2 through $n {
+        $shadows:'#{$shadows},#{random(100)}vw #{random(100)}vh #fff';
+      }
+      @return unquote($shadows)
+    };
   .starrySky{
     height: 100%;
     width: 100%;
@@ -42,13 +42,11 @@
       -webkit-background-clip: text;
       color: transparent; 
     };
-    $duration: 1000s;
-    $count: 1000;
-    @for $i from 1 through 10 {
+    @for $i from 1 through 3 {
       .layer#{$i}{
         $size:#{$i}px;
-        $duration: floor($duration / 2);
-        $count: floor($count / 2);
+        $duration: floor(calc($duration / 2));
+        $count: floor(calc($count / 2));
         position: absolute;
         height: $size;
         width: $size;

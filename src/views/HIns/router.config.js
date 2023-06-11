@@ -23,4 +23,12 @@ export default [
     },
     component: () => import('./aboutVue3/someUsage.vue'),
   },
+  {
+    name: '线',
+    path: '/line',
+    meta: {
+      icon: 'DataLine'
+    },
+    component: () => import('./aboutCanvas/line.vue'),
+  }
 ]

@@ -11,10 +11,10 @@ let bottonText = ref(aaa());
 
 import { homeStore } from '@/views/home/pinia.config.js'
 import { storeToRefs } from 'pinia'
-const store = homeStore();
-const val = storeToRefs(store)
-console.log('val',val)
-console.log('store',store)
+const store = homeStore(); //直接对store进行解构，会破坏数据的响应
+const val = storeToRefs(store) //响应式处理
+// console.log('val',val)
+// console.log('store',store)
 
 function changeBottonText() {
   // let random = Math.random();

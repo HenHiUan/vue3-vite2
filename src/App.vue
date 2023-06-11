@@ -5,6 +5,7 @@ import {useRouter} from 'vue-router'
 import { computed, ref } from "vue";
 const route = useRouter();
 let path = ref(route);
+
 const key = computed(()=>{
   return path.value.currentRoute.fullPath;
 })
@@ -26,7 +27,7 @@ const key = computed(()=>{
 
         <div class="bottom">
           <router-view v-slot="{ Component }" :key="key">
-            <transition name="fade-transform" mode="out-in">
+            <transition name="fade" mode="out-in" appear>
               <keep-alive>
                 <component :is="Component" />
               </keep-alive>
@@ -64,6 +65,20 @@ $menuW: 200px;
         overflow: auto;
         flex: 1;
       }
+    }
+    // 过渡
+    .fade-enter-from, .fade-leave-to {
+      // transform: translateX(20px);
+      opacity: 0;
+    }
+    .fade-enter-to, .fade-leave-from {
+      opacity: 1;
+    }
+    .fade-enter-active {
+      transition: all 0.3s ease;
+    }
+    .fade-leave-active {
+      transition: all 0.1s cubic-bezier(1, 0.6, 0.6, 1);
     }
   }
 }

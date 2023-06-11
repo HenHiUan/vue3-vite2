@@ -1,6 +1,6 @@
 <script setup>
   import { ref } from 'vue'
-  const dot = ref(new Array(36).fill('dot'))
+  const dot = ref(new Array(72).fill('dot'))
   // console.log(dot)
 </script>
 <template>
@@ -10,14 +10,14 @@
 </template>
 <style lang="scss" scoped>
 $boxSize: 10px;
-$contentSize: 150px;
-$n: 36;
+$contentSize: 300px;
+$n: 72;
 $deg: 360deg / $n;
 $ani-duration: 2000ms;
 .loading {
   width: $contentSize;
   height: $contentSize;
-  margin: 50px auto;
+  margin: 200px auto;
   position: relative;
   border-radius: 50%;
   .dot{

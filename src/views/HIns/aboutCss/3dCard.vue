@@ -4,7 +4,7 @@
   import { storeToRefs } from 'pinia'
   const store = cssStore();
   const { aaa } = storeToRefs(store) // 对状态进行赋值操作并保持响应式，不能使用getters
-  let colorRed = ref("red")
+  let colorRed = ref("skyblue")
 </script>
 <template>
   <div class="card">
@@ -16,6 +16,6 @@
   .card {
     // --bg: red;
     // background: var(--bg);
-    background: v-bind(colorRed)
+    background: v-bind(colorRed);
   }
 </style>

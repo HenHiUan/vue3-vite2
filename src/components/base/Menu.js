@@ -25,6 +25,15 @@ export default [
             path: "/someUsage"
           }
         ]
+      },
+      {
+        title: "关于Canvas",
+        children: [
+          {
+            title: "线",
+            path: "/line"
+          }
+        ]
       }
     ]
   },
